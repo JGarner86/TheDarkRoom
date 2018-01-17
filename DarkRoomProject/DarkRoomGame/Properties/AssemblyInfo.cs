@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("DarkRoomGame")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("AoA Development")]
 [assembly: AssemblyProduct("DarkRoomGame")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]

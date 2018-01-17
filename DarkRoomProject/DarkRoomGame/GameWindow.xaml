@@ -1,0 +1,41 @@
+﻿<Window x:Class="DarkRoomGame.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DarkRoomGame"
+        mc:Ignorable="d"
+        Title="The Dark Room" Height="750" Width="950">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="250"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Left Column -->
+        <StackPanel Grid.RowSpan="2" Background="Red">
+            
+            
+        </StackPanel>
+        
+        <!-- Right Column -->
+        <StackPanel Grid.Column="2" Grid.RowSpan="2" Background="Black">
+            
+        </StackPanel>
+        
+        <!-- User Input/Game Dialog -->
+        <StackPanel Grid.Row="1" Grid.Column="1" Background="Blue">
+            
+        </StackPanel>
+        
+        <!-- Game Graphics/Game Dialog -->
+        <StackPanel Grid.Column="1" Grid.Row="0" Background="Gray">
+            
+        </StackPanel>
+    </Grid>
+</Window>
