@@ -27,15 +27,8 @@ namespace DarkRoomGame
 
         
 
-        private void GameWindow_SizeChange(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            BigRed.Content = "This was clicked motha fucka!";
-        }
+        
     }
 
 
