@@ -23,8 +23,7 @@ namespace DarkRoomGame
         public GameWindow()
         {
             InitializeComponent();
-            EnemyModel Sliter = new EnemyModel();
-            Sliter.Name = "Sliter";
+         
 
 
 
