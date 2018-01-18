@@ -6,8 +6,21 @@ using System.Threading.Tasks;
 
 namespace TagEngineLib
 {
-    class EnemyModel
+	public class EnemyModel
     {
-		string testing = "Hello World";
-    }
+		public string Name { get; set; }
+
+        public void WhatsMyName()
+        {
+
+
+
+
+
+        } 
+	
+
+
+	}
+
 }
