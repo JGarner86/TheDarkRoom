@@ -30,12 +30,19 @@
         
         <!-- User Input/Game Dialog -->
         <StackPanel Grid.Row="1" Grid.Column="1" Background="Blue">
-            
+            <TextBlock x:Name="GameDialog" 
+                       Margin="0,20,0,0"
+                       Text="Test"
+                       FontSize="20" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center"
+                       Foreground="Yellow">
+            </TextBlock>
         </StackPanel>
         
         <!-- Game Graphics/Game Dialog -->
         <StackPanel Grid.Column="1" Grid.Row="0" Background="Gray">
-            
+           
         </StackPanel>
     </Grid>
 </Window>

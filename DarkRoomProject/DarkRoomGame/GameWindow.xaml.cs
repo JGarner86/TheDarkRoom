@@ -22,7 +22,7 @@ namespace DarkRoomGame
         public GameWindow()
         {
             InitializeComponent();
-
+            
         }
 
         

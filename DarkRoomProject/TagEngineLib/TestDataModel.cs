@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace TagEngineLib
 {
-    class DialogModel
+    class TestDataModel
     {
-       
-
-        
     }
 }
