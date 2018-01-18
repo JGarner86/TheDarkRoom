@@ -8,5 +8,6 @@ namespace TagEngineLib
 {
     class EnemyModel
     {
+		string testing = "Hello World";
     }
 }
