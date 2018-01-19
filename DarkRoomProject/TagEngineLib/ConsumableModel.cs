@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TagEngineLib
 {
-    class Bobbysclass
+    class ConsumableModel
     {
+       
+        
+
     }
 }

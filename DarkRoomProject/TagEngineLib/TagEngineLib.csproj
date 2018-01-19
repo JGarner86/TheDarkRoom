@@ -41,12 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttackModel.cs" />
-    <Compile Include="Bobbysclass.cs" />
     <Compile Include="CharacterModel.cs" />
+    <Compile Include="ConsumableModel.cs" />
     <Compile Include="DialogModel.cs" />
     <Compile Include="EnemyModel.cs" />
     <Compile Include="EnvironmentModel.cs" />
     <Compile Include="InventoryModel.cs" />
+    <Compile Include="ItemModel.cs" />
+    <Compile Include="MapModel.cs" />
     <Compile Include="NpcModel.cs" />
     <Compile Include="PlayerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,6 +56,8 @@
     <Compile Include="StageModel.cs" />
     <Compile Include="TestDataModel.cs" />
     <Compile Include="UserInputModel.cs" />
+    <Compile Include="WeaponModel.cs" />
+    <Compile Include="WearableModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
