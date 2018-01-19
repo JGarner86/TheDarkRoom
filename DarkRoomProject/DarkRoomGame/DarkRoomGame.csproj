@@ -99,5 +99,11 @@
     <Folder Include="ViewModel\" />
     <Folder Include="View\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TagEngineLib\TagEngineLib.csproj">
+      <Project>{533ad0e6-ab13-4baf-b4f6-b5868cfa504b}</Project>
+      <Name>TagEngineLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
