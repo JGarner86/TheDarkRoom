@@ -27,7 +27,13 @@ namespace BobbysTestLib
             switch (species)
             {
                 case AnimalSpecies.Dog:
-                    
+                    Console.WriteLine(Dog.BaseSpeak);
+                    break;
+                case AnimalSpecies.Cat:
+                    Console.WriteLine(Cat.BaseSpeak);
+                    break;
+                case AnimalSpecies.Bird:
+                    Console.WriteLine(Bird.BaseSpeak);
                     break;
             }
         }

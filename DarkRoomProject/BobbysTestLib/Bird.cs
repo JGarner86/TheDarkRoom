@@ -8,7 +8,7 @@ namespace BobbysTestLib
 {
     class Bird : Animal
     {
-        public string Message { get; set; }
+        public static string BaseSpeak { get; set; }
 
 
     }

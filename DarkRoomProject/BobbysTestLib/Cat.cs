@@ -8,5 +8,7 @@ namespace BobbysTestLib
 {
     class Cat
     {
+        public static string BaseSpeak = "Meow!";
+
     }
 }

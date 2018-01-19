@@ -8,7 +8,8 @@ namespace BobbysTestLib
 {
     class Dog
     {
-        public static string Message { get; set; }
+        public static string BaseSpeak = "Bark!";
 
+        
     }
 }
