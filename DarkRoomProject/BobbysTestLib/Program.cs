@@ -19,11 +19,13 @@ namespace BobbysTestLib
             _cat = Animal.Species.Cat;
             _dog = Animal.Species.Dog;
             _bird = Animal.Species.Bird;
-
-         
+            Bird TweetyBird = new Bird();
+            
+             
 
             do
             {
+                Console.Clear();
                 Console.WriteLine("Ask for a cat, dog, or bird call.");
                 string userInput = Console.ReadLine().ToLower();
                 if (userInput == "cat")
@@ -38,6 +40,7 @@ namespace BobbysTestLib
                 else if (userInput == "bird")
                 {
                     Animal.Speak(_bird);
+                    Console.WriteLine("Number of legs: " + TweetyBird.Legs);
                 }
                 Console.WriteLine("Ask for another animal? Y for yes, Esc to quit.");
             } while (Console.ReadKey().Key != ConsoleKey.Escape);
