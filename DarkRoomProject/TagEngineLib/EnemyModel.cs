@@ -9,10 +9,11 @@ namespace TagEngineLib
 	public class EnemyModel
     {
 		public string Name { get; set; }
+        public int Health { get;set; }
 
-        public void WhatsMyName()
+        public void TakePotion(int Amount)
         {
-
+            this.Health += Amount;
 
 
 

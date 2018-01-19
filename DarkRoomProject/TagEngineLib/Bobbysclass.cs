@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BobbysTestLib
+namespace TagEngineLib
 {
-    class Program
+    class Bobbysclass
     {
-        
-        static void Main(string[] args)
-        { 
-        }
     }
 }

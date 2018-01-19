@@ -38,6 +38,11 @@
                        HorizontalAlignment="Center"
                        Foreground="Yellow">
             </TextBlock>
+            <Button x:Name="TalkButton" 
+                    Margin="50,0,50,0" 
+                    Height="50" 
+                    Width="150" 
+                    Click="TalkButton_Click">Click Me</Button>
         </StackPanel>
         
         <!-- Game Graphics/Game Dialog -->

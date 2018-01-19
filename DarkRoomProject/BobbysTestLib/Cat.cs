@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BobbysTestLib
 {
-    class Cat
+     class Cat : Animal
     {
         public static string BaseSpeak = "Meow!";
 
