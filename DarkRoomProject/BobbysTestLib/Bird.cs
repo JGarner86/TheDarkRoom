@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BobbysTestLib
 {
-    class Bird : Animal
+    public class Bird : Animal
     {
-        public static string BaseSpeak { get; set; }
+        public static string BaseSpeak = "Chirp, Chirp!";
 
 
     }
