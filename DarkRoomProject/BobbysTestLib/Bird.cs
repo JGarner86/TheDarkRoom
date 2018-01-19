@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TagEngineLib
+namespace BobbysTestLib
 {
-    class EnemyModel
+    class Bird : Animal
     {
-		
+        public string Message { get; set; }
+
+
     }
 }
