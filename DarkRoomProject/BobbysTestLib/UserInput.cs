@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace BobbysTestLib
 {
-    public class Cat : Animal
+    public class UserInput
     {
-        public static string BaseSpeak = "Meow!";
-        
-
-
+        public int Stage { get; set; }
+        public string Lang  { get; set; }
+        public int Picks { get; set; }
     }
 }
