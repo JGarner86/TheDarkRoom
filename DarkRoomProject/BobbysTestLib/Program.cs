@@ -16,31 +16,40 @@ namespace BobbysTestLib
 
         static void Main(string[] args)
         {
-            var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            path += "\\CharacterData.txt";
-         
-            List<EnemyModel> enemyList = new List<EnemyModel>();
-
-            DataModel.FetchData(ref enemyList, path);
-
-            string output = JsonConvert.SerializeObject(enemyList);
-
-            List<EnemyModel> newEnemyList = JsonConvert.DeserializeObject<List<EnemyModel>>(output);
-            foreach(var enemy in newEnemyList)
-            {
-                Console.WriteLine($"Enemy Name: {enemy.Name}  |  Health: {enemy.Health}  |  Stammina: {enemy.Stamina}  |  Weapon: {enemy.Weapon}");
-            }
+          
             
+            
+            
+            
+            
+            
+            
+            #region JsonTest
+            //var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            //path += "\\CharacterData.txt";
 
-                
-            //foreach (var enemy in enemyList)
+            //List<EnemyModel> enemyList = new List<EnemyModel>();
+
+            //DataModel.FetchData(ref enemyList, path);
+
+            //string output = JsonConvert.SerializeObject(enemyList);
+
+            //List<EnemyModel> newEnemyList = JsonConvert.DeserializeObject<List<EnemyModel>>(output);
+            //foreach(var enemy in newEnemyList)
             //{
-            //    Console.WriteLine("Enemy Name: {0} |  Health: {1}  |  Stammina: {2}  |  Weapon: {3}", enemy.Name, enemy.Health, enemy.Stamina, enemy.Weapon);
-
+            //    Console.WriteLine($"Enemy Name: {enemy.Name}  |  Health: {enemy.Health}  |  Stammina: {enemy.Stamina}  |  Weapon: {enemy.Weapon}");
             //}
-            Console.WriteLine(output);
-            Console.ReadLine();
 
+
+
+            ////foreach (var enemy in enemyList)
+            ////{
+            ////    Console.WriteLine("Enemy Name: {0} |  Health: {1}  |  Stammina: {2}  |  Weapon: {3}", enemy.Name, enemy.Health, enemy.Stamina, enemy.Weapon);
+
+            ////}
+            //Console.WriteLine(output);
+            //Console.ReadLine();
+            #endregion
 
 
             #region    Animal Example Code      
