@@ -8,9 +8,9 @@ namespace BobbysTestLib
 {
     public class Bird : Animal
     {
-        public static string BaseSpeak = "Chirp, Chirp!";
+        public static string BaseSpeak { get; private set; }  = "Chirp, Chirp!";
+        public int Legs { get; } = 2;
 
-
-
+        
     }
 }

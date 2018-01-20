@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TagEngineLib
 {
-    class DialogModel
+    public class DialogModel
     {
-       
+        public static string GameDialog { get; set; }
 
-        
+
     }
 }

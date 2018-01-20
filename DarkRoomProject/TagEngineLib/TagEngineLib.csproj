@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,12 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttackModel.cs" />
-    <Compile Include="Bobbysclass.cs" />
     <Compile Include="CharacterModel.cs" />
+    <Compile Include="ConsumableModel.cs" />
     <Compile Include="DialogModel.cs" />
     <Compile Include="EnemyModel.cs" />
     <Compile Include="EnvironmentModel.cs" />
     <Compile Include="InventoryModel.cs" />
+    <Compile Include="ItemModel.cs" />
+    <Compile Include="MapModel.cs" />
     <Compile Include="NpcModel.cs" />
     <Compile Include="PlayerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,6 +59,11 @@
     <Compile Include="StageModel.cs" />
     <Compile Include="TestDataModel.cs" />
     <Compile Include="UserInputModel.cs" />
+    <Compile Include="WeaponModel.cs" />
+    <Compile Include="WearableModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

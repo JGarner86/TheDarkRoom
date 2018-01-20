@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace TagEngineLib
 {
-    class InventoryModel
+    class WearableModel
     {
-        
     }
 }

@@ -11,14 +11,7 @@ namespace TagEngineLib
 		public string Name { get; set; }
         public int Health { get;set; }
 
-        public void TakePotion(int Amount)
-        {
-            this.Health += Amount;
-
-
-
-
-        } 
+        
 	
 
 
