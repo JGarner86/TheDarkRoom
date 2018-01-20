@@ -39,7 +39,7 @@ namespace DarkRoomGame
             GameDialog.Text = "My Name Is " + Sliter.Name;
             GameDialog.FontSize = 50;
             jackdialog.Text = "My Name Is " + Ghost.Name;
-            Ghost.TakePotion(50);
+            //Ghost.TakePotion(50);
 
 
 
