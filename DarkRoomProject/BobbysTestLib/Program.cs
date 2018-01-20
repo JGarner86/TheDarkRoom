@@ -14,11 +14,12 @@ namespace BobbysTestLib
 
         static void Main(string[] args)
         {
-            Animal.Species _cat, _dog, _bird = new Animal.Species();
+            Animal.Species _cat, _dog, _bird, _Monkey = new Animal.Species();
 
             _cat = Animal.Species.Cat;
             _dog = Animal.Species.Dog;
             _bird = Animal.Species.Bird;
+            _Monkey = Animal.Species.Monkey;
 
          
 
@@ -38,6 +39,10 @@ namespace BobbysTestLib
                 else if (userInput == "bird")
                 {
                     Animal.Speak(_bird);
+                }
+                else if (userInput == "monkey")
+                {
+                    Animal.Speak(_Monkey);
                 }
                 Console.WriteLine("Ask for another animal? Y for yes, Esc to quit.");
             } while (Console.ReadKey().Key != ConsoleKey.Escape);

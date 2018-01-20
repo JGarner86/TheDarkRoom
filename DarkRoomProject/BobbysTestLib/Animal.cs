@@ -19,7 +19,7 @@ namespace BobbysTestLib
 
 
         // enums are like attributes of an object. They can be more than that but thats the base you need to know for now.
-        public enum Species { Dog, Cat, Bird }
+        public enum Species { Dog, Cat, Bird, Monkey }
         public enum FurColor { Brown, Black, Orange, Green, Grey }
 
         public static void Speak(Species species)
@@ -34,6 +34,9 @@ namespace BobbysTestLib
                     break;
                 case Species.Bird:
                     Console.WriteLine(Bird.BaseSpeak);
+                    break;
+                case Species.Monkey:
+                    Console.WriteLine(Monkey.basespeak);
                     break;
             }
         }
