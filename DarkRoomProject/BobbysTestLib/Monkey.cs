@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BobbysTestLib
 {
-    public class Cat : Animal
+    public class Monkey : Animal
     {
-        public static string BaseSpeak = "Meow!";
-        
+        public static string basespeak = "woo woo";    
+
 
 
     }
