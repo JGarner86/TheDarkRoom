@@ -11,23 +11,20 @@ namespace BobbysTestLib
 {
     class Program
     {
-
-
+        
+        
 
         static void Main(string[] args)
         {
-            Inventory.AddWeapons();
-            foreach (Weapons weapon in Inventory.weaponslist)
-            {
-                Console.WriteLine($"Name: {weapon.Name}  |  Breakable: {weapon.Breakable}  |  Throwable: {weapon.Throwable}  |  Reloadable: {weapon.Realoable}  |  AmmoCount: {weapon.AmmoCount}  |  Timer: {weapon.Timer}");
-
-            }
-            Console.ReadLine();
+          
             
-
-
-
-            #region testcode
+            
+            
+            
+            
+            
+            
+            #region JsonTest
             //var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             //path += "\\CharacterData.txt";
 
@@ -52,8 +49,7 @@ namespace BobbysTestLib
             ////}
             //Console.WriteLine(output);
             //Console.ReadLine();
-            #endregion 
-
+            #endregion
 
 
             #region    Animal Example Code      
