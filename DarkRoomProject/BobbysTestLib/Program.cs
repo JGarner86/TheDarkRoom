@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
-
+using Newtonsoft.Json;
 
 namespace BobbysTestLib
 {
@@ -18,17 +18,27 @@ namespace BobbysTestLib
         {
             var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             path += "\\CharacterData.txt";
-            Console.WriteLine(path);
-            Console.ReadLine();
+         
             List<EnemyModel> enemyList = new List<EnemyModel>();
 
             DataModel.FetchData(ref enemyList, path);
 
-            foreach (var enemy in enemyList)
-            {
-                Console.WriteLine("Enemy Name: {0} |  Health: {1}  |  Stammina: {2}  |  Weapon: {3}", enemy.Name, enemy.Health, enemy.Stamina, enemy.Weapon);
+            string output = JsonConvert.SerializeObject(enemyList);
 
+            List<EnemyModel> newEnemyList = JsonConvert.DeserializeObject<List<EnemyModel>>(output);
+            foreach(var enemy in newEnemyList)
+            {
+                Console.WriteLine($"Enemy Name: {enemy.Name}  |  Health: {enemy.Health}  |  Stammina: {enemy.Stamina}  |  Weapon: {enemy.Weapon}");
             }
+            
+
+                
+            //foreach (var enemy in enemyList)
+            //{
+            //    Console.WriteLine("Enemy Name: {0} |  Health: {1}  |  Stammina: {2}  |  Weapon: {3}", enemy.Name, enemy.Health, enemy.Stamina, enemy.Weapon);
+
+            //}
+            Console.WriteLine(output);
             Console.ReadLine();
 
 
