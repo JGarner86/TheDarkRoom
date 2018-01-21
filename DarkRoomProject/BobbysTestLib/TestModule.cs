@@ -14,8 +14,8 @@ namespace BobbysTestLib
             Test(SimpleMath.AddTwoNumbers(4, 3), 7, "AddTwoNumbers");
             Test(SimpleMath.MinusTwoNumbers(10, 5), 5, "MinusTwoNumbers");
             Test(SimpleMath.TimesTwoNumbers(6, 3), 18, "TimesTwoNumbers");
-            Test(SimpleMath.DivideTwoNumbers(10, 100), 10, "DivideTwoNumbers");
-            Test(SimpleMath.CheckIfTwoNumbersAreEqual(5, 5), true, "CheckIfTwoNumbersAreEqual");
+            Test(SimpleMath.DivideTwoNumbers(100, 10 ), 10, "DivideTwoNumbers");
+           // Test(SimpleMath.CheckIfTwoNumbersAreEqual(5, 5), true, "CheckIfTwoNumbersAreEqual");
             
         }
 
@@ -32,7 +32,7 @@ namespace BobbysTestLib
             }
         }
 
-        private static void Test(bool method, int expectedResult, string name)
+        private static void Test(bool method, bool expectedResult, string name)
         {
             Test(method, expectedResult, name);
         }
