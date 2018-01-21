@@ -16,9 +16,10 @@ namespace BobbysTestLib
 
         static void Main(string[] args)
         {
-            
 
-            
+
+            TestModule.RunTest();
+            Console.ReadLine();
             
             
             
