@@ -45,9 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
     <Compile Include="DataModel.cs" />
     <Compile Include="EnemyModel.cs" />
+    <Compile Include="GameDialog.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

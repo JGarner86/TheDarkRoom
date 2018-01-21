@@ -16,8 +16,8 @@ namespace BobbysTestLib
 
         static void Main(string[] args)
         {
-          
-            
+
+            testgame.whatever();  
             
             
             
