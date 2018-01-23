@@ -18,9 +18,14 @@ namespace BobbysTestLib
         {
 
 
-            TestModule.RunTestOne();
-            Console.ReadLine();
-           
+            //TestModule.RunTestOne();
+            //Console.ReadLine();
+            do
+            {
+                ConsoleKey test = UserController.UserKeyPress;
+                Console.WriteLine(test);
+            } while (Console.ReadKey().Key != ConsoleKey.Escape);
+
             
             
             
