@@ -8,11 +8,12 @@ namespace BobbysTestLib
 {
    public class Character 
     { 
-       string Name { get; set; }
+        public string Name { get; set; }
         public Weapon PrimaryWeapon; 
         public Weapon SecondaryWeapon = new Weapon();
         public Weapon Sidearm = new Weapon();
         public int Health { get; set; }
+        public int Stamina { get; set; }
 
         public Character()
         {
@@ -23,7 +24,14 @@ namespace BobbysTestLib
             PrimaryWeapon = _primaryWeapon;
             Name = _name;
         }
-        
+
+
+       public void DamageAdjust(ref int damage)
+       {
+            damage = Stamina * damage / 100;
+            Stamina -= 10;
+
+       }
       
        
         
