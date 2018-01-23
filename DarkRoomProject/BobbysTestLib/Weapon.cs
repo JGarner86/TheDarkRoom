@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BobbysTestLib
 {
-   public class Weapons
+   public class Weapon
     {
         public int Weight { get; set; }
         public  string Name { get; set; }

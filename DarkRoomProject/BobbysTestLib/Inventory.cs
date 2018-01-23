@@ -8,11 +8,11 @@ namespace BobbysTestLib
 {
     public class Inventory
     {
-        public static List<Weapons> weaponslist = new List<Weapons>(); 
+        public static List<Weapon> weaponslist = new List<Weapon>(); 
 
         public static void AddWeapons()
         {
-            Weapons weapon = new Weapons();
+            Weapon weapon = new Weapon();
             Console.WriteLine("Enter weapon name");
             weapon.Name = Console.ReadLine();//Gets info from the console
             Console.WriteLine("Is weapon throwable press Y for yes or N for no");

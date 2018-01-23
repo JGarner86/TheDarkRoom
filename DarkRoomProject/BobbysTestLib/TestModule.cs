@@ -22,24 +22,24 @@ namespace BobbysTestLib
             
         }
 
-        public static void RunTest(Person personA, Person personB)
+        public static void RunTestOne()
         {
-            Person Bobby = new Person
+            Person Bobby = new Person("Bobby","Brooks")
             {
-                FirstName = "Bobby",
-                LastName = "Brooks",
+                
+                
                 City = "Midland",
                 State = "Tx",
                 Street = "354 Midkiff",
                 Zip = "79705",
                 PhoneNumber = "432-555-2365",
-                
+
             };
 
-            Person Josh = new Person
+            Person Josh = new Person("Josh","Garner")
             {
-                FirstName = "Josh",
-                LastName = "Garner",
+                
+                
                 City = "Cedar Park",
                 State = "Tx",
                 Street = "610 Cheyenne Ln",
@@ -47,12 +47,22 @@ namespace BobbysTestLib
                 PhoneNumber = "737-212-4225",
 
             };
+            Character Goblin = new Character("Goblin", new Weapon());
+            Goblin.PrimaryWeapon.Throwable = true;
+            Goblin.SecondaryWeapon.Throwable = false;
+            Goblin.Sidearm.Realoable = true;
+            Goblin.Sidearm.AmmoCount = 50;
+            Goblin.Sidearm.AmmoCount = Goblin.Sidearm.AmmoCount - 30;
+            int AmmoLeft = Goblin.Sidearm.AmmoCount - 30;
+           
 
+            Josh.FirstName = "Jody";
             Bobby.CallPerson(Josh);
             Bobby.PrintAddress();
-
-
-
+            Console.WriteLine(Person.Count);
+            Bobby.PrintAddress(Josh);
+            
+            
         }
 
         private static void Test(int method, int expectedResult, string name)

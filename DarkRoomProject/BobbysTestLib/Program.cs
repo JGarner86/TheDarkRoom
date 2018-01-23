@@ -18,9 +18,9 @@ namespace BobbysTestLib
         {
 
 
-            TestModule.RunTest();
+            TestModule.RunTestOne();
             Console.ReadLine();
-            
+           
             
             
             
