@@ -8,20 +8,27 @@ namespace BobbysTestLib
 {
     public class UserController
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public static ConsoleKey UserKeyPress { get{ return getKeyPress(); } }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
         private static List<ConsoleKey> keyMap = new List<ConsoleKey> { ConsoleKey.R, ConsoleKey.H, ConsoleKey.F };
-        //private static ConsoleKey userKey = getKeyPress();
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private static ConsoleKey getKeyPress()
         {
-
-            ConsoleKey userKey = Console.ReadKey().Key;
-            if (!keyMap.Contains(userKey))
-            {
+            ConsoleKey userKey = Console.ReadKey(true).Key;
+            while (!keyMap.Contains(userKey))
+            {             
                 Console.WriteLine("You have entered an invalid key...");
-                
-                getKeyPress();
-               
+                userKey = Console.ReadKey(true).Key;
             }
             return userKey;
         }
