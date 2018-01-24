@@ -19,7 +19,8 @@ namespace BobbysTestLib
         public int StaminaReginFactor { get; set; }
         public int Damage { get; set; }
         public bool BlockDamage { get; set; }
-        public int ExpPoints { get; set; } 
+        public int GoldAmount { get; set; }
+        public int Level { get; set; }
         
 
         public Character()

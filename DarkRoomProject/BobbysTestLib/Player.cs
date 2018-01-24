@@ -6,29 +6,34 @@ using System.Threading.Tasks;
 
 namespace BobbysTestLib
 {
+
     public class Player : Character
-    { /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="character"></param>
-       public void SwordSlash(Character character)
+    {
+        public int ExpPoints { get; set; }
+        public int FleeCount { get; set; } = 3;
+
+
+
+
+
+        public void SwordSlash(Character character)
        {
             int attackAmount = -40;
             StaminaDamageAdjust(ref attackAmount, AttackType.Medium);
            character.Health += attackAmount;
-            Console.WriteLine($"{Name} Hit {character.Name} with swordSlash for{attackAmount}damage");
+            Console.WriteLine($"{Name} Hit {character.Name} with SwordSlash for{attackAmount}damage");
        }
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="character"></param>
-       public void HeavyAttack(Character character)
+       public void FinalSlash (Character character)
        {
             int attackAmount = -80;
             StaminaDamageAdjust(ref attackAmount, AttackType.Heavy);
             Health += attackAmount;
-            Console.WriteLine($"{character.Name} Hit {Name} with a Heavy attack for{attackAmount}");
+            Console.WriteLine($"{character.Name} Hit {Name} with a FinalSlash for{attackAmount}");
        }
 
 

@@ -16,7 +16,7 @@ namespace BobbysTestLib
         /// <summary>
         /// 
         /// </summary>
-        private static List<ConsoleKey> keyMap = new List<ConsoleKey> { ConsoleKey.R, ConsoleKey.H, ConsoleKey.F };
+        private static List<ConsoleKey> keyMap = new List<ConsoleKey> { ConsoleKey.A, ConsoleKey.S, ConsoleKey.D, ConsoleKey.F, ConsoleKey.G};
         
         /// <summary>
         /// 

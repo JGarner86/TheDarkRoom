@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace BobbysTestLib
 {
-    public class Bear : Character
-    {       public int ExpReward { get; set; } 
-         /// <summary>
-        /// Bear objects abillity Attacks
-        /// </summary>
-        /// <param name="bear">Is the bear object to be attacked</param>
-        /// <param name="player">Is the player object to be attacked</param>
+    public class Enemy : Character
+    {
+        public bool CanFlee = false;
+        public int ExpReward { get; set; }
+       
+      
+        
+        
+        
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <param name="character"></param>
         public void ClawSlash(Character character)
         {
             int attackAmount = -30;
@@ -25,8 +31,7 @@ namespace BobbysTestLib
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="bear"></param>
-        /// <param name="player"></param>
+        /// <param name="character"></param>
         public void HeavySlash(Character character)
         {
             int attackAmount = -60;
@@ -42,14 +47,14 @@ namespace BobbysTestLib
         /// </summary>
         public void Main()
         {
-            List<Bear> enemies = new List<Bear>();
+            List<Enemy> enemies = new List<Enemy>();
             Player Jack = new Player();
 
-            enemies.Add(new Bear() { Name = "Tiger", Health = 100, Stamina = 70  }  );
+            enemies.Add(new Enemy() { Name = "Tiger", Health = 100, Stamina = 70  }  );
 
-            enemies.Add(new Bear() { Name = "Gorilla", Health = 200, Stamina = 60 } );
+            enemies.Add(new Enemy() { Name = "Gorilla", Health = 200, Stamina = 60 } );
 
-            enemies.Add(new Bear()
+            enemies.Add(new Enemy()
             {
                 Name = "VampireBat",
                 Health = 50,
@@ -57,10 +62,10 @@ namespace BobbysTestLib
                 PrimaryWeapon = new Weapon() {Name = "Scream", Damage = -30}
             });
             
-            enemies.Add(new Bear() { Name = "Goblin",
+            enemies.Add(new Enemy() { Name = "Goblin",
                                      Health = 150,
                                      Stamina = 50  } );
-            enemies.Add(new Bear() { Name = "Troll",
+            enemies.Add(new Enemy() { Name = "Troll",
                                      Health = 200,
                                      Stamina = 30} );
             Jack.PrimaryWeaponAttack(enemies[0]);
