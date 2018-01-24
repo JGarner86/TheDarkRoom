@@ -26,13 +26,7 @@ namespace BobbysTestLib
        }
 
 
-      public  void Healing(Player player)
-      {
-            int potion = 100;
-            player.Health += potion;
-            Console.WriteLine($"{player.Name} Drinks a Potion and gains {potion} health");
-
-      } 
+      
        
     }
 }
