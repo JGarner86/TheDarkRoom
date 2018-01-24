@@ -7,34 +7,39 @@ using System.Threading.Tasks;
 namespace BobbysTestLib
 {
     public class Bear : Character
-    {
-
-        public void ClawSlash(Bear bear, Player player)
+    {       public int ExpReward { get; set; } 
+         /// <summary>
+        /// Bear objects abillity Attacks
+        /// </summary>
+        /// <param name="bear">Is the bear object to be attacked</param>
+        /// <param name="player">Is the player object to be attacked</param>
+        public void ClawSlash(Character character)
         {
             int attackAmount = -30;
-            DamageAdjust(ref attackAmount);
-            player.Health += attackAmount;
-            Console.WriteLine($" { bear.Name} Hit { player.Name} with a claw slash For {attackAmount} Damage ");
+            StaminaDamageAdjust(ref attackAmount, AttackType.Medium);
+            character.Health += attackAmount;
+            Console.WriteLine($" { Name} Hit { character.Name} with a claw slash For {attackAmount} Damage ");
 
         }
 
-
-        public void HeavySlash(Bear bear, Player player)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bear"></param>
+        /// <param name="player"></param>
+        public void HeavySlash(Character character)
         {
             int attackAmount = -60;
-            DamageAdjust(ref attackAmount);
-            player.Health += attackAmount;
-            Console.WriteLine($"{bear.Name} Hit {player.Name} with a HeavySlash for {attackAmount}");
+            StaminaDamageAdjust(ref attackAmount, AttackType.Heavy);
+            character.Health += attackAmount;
+            Console.WriteLine($"{Name} Hit {character.Name} with a HeavySlash for {attackAmount}");
         }
 
 
-
-        public void PowerUp(Bear bear)
-        {
-            int defenseUp = 40;
-            bear.Health += defenseUp;
-            Console.WriteLine($"{bear.Name} used agro to Power Up {defenseUp}");
-        }
+       
+        /// <summary>
+        /// 
+        /// </summary>
         public void Main()
         {
             List<Bear> enemies = new List<Bear>();
@@ -58,16 +63,10 @@ namespace BobbysTestLib
             enemies.Add(new Bear() { Name = "Troll",
                                      Health = 200,
                                      Stamina = 30} );
-            PrimaryWeaponAttack(enemies[2], Jack, FromTo.BearToPlayer);
-            PrimaryWeaponAttack(enemies[2], Jack, FromTo.PlayerToBear);
-            PrimaryWeaponAttack(enemies[0], Jack, FromTo.BearToPlayer);
-            PrimaryWeaponAttack(enemies[0], Jack, FromTo.PlayerToBear);
-            PrimaryWeaponAttack(enemies[1], Jack, FromTo.BearToPlayer);
-            PrimaryWeaponAttack(enemies[1], Jack, FromTo.PlayerToBear);
-            PrimaryWeaponAttack(enemies[3], Jack, FromTo.BearToPlayer);
-            PrimaryWeaponAttack(enemies[3], Jack, FromTo.PlayerToBear);
-            PrimaryWeaponAttack(enemies[4], Jack, FromTo.BearToPlayer);
-            PrimaryWeaponAttack(enemies[4], Jack, FromTo.PlayerToBear);
+            Jack.PrimaryWeaponAttack(enemies[0]);
+            Jack.PrimaryWeaponAttack(enemies[1]);
+            enemies[0].PrimaryWeaponAttack(Jack);
+            enemies[1].PrimaryWeaponAttack(Jack);
             
             Console.WriteLine();
 

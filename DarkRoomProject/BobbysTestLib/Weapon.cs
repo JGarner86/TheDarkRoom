@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BobbysTestLib
-{
+{   /// <summary>
+    /// Proberites for Weapon Types
+    /// </summary>
    public class Weapon
     {
         public int Weight { get; set; }

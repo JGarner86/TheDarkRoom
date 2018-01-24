@@ -30,6 +30,8 @@ namespace BobbysTestLib
              
 
         }
+
+
         public static void CheckingPress(string Letter1, string dialog1, string dialog2, string Letter2, string Basedialog)
         {
             Console.WriteLine(Basedialog);

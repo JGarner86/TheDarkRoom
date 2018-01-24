@@ -16,84 +16,116 @@ namespace BobbysTestLib
         public int Health { get; set; }
         public int Stamina { get; set; }
         public int Potion { get; set; }
+        public int StaminaReginFactor { get; set; }
+        public int Damage { get; set; }
+        public bool BlockDamage { get; set; }
+        public int ExpPoints { get; set; } 
+        
 
         public Character()
         {
                
         }
+
+
+
+
         public Character(string _name, Weapon _primaryWeapon)
         {
             PrimaryWeapon = _primaryWeapon;
             Name = _name;
         }
 
-
-       public void DamageAdjust(ref int damage)
+        /// <summary>
+        /// Changes the damage output based off attack type 
+        /// </summary>
+        /// <param name="damage"></param>
+        /// <param name="attackType"></param>
+       public void StaminaDamageAdjust(ref int damage,AttackType attackType)
        {
-            damage = Stamina * damage / 100;
-            Stamina -= 10;
+            switch (attackType)
+            {
+                case AttackType.Light:
+                    damage = Stamina * damage / 100;
+                    Stamina -= 2;
+                    break;
+                case AttackType.Medium:
+                    damage = Stamina * damage / 100;
+                    Stamina -= 10;
+                    break;
+                case AttackType.Heavy:
+                    damage = Stamina * damage / 100;
+                    Stamina -= 15;
+                    break;
+            }
+            
+           
 
        }
       
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="character"></param>
+        public void PrimaryWeaponAttack(Character character)
+        {
+            
+               character.Health += PrimaryWeapon.Damage;
+                Console.WriteLine($"{Name} Hit {character.Name} With {PrimaryWeapon.Name} for  {PrimaryWeapon.Damage} damage");
+        }
+
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <param name="character"></param>
+        public void SecondaryWeaponAttack(Character character)
+        {
+            
+            
+                character.Health += SecondaryWeapon.Damage;
+                Console.WriteLine($"{Name} Hit {character.Name} With {SecondaryWeapon.Name} for  {SecondaryWeapon.Damage} damage");
+         }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="character"></param>
+        public void SidearmWeaponAttack(Character character )
+        {
+          
+                character.Health += Sidearm.Damage;
+                Console.WriteLine($"{Name} Hit {character.Name} With {Sidearm.Name} for  {Sidearm.Damage} damage");   
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="character"></param>
+        public void Healing(Character character)
+        {
+            Stamina = 100;
+            Health += Potion;
+            Console.WriteLine($"{Name} Drinks a potion and gains {Potion} health");
+        }
        
-        public void PrimaryWeaponAttack(Bear bear, Player player, FromTo fromTo)
+        ///
+        public void StaminaRegin(Character character )
         {
-            if(fromTo == FromTo.BearToPlayer)
-            {
-                player.Health += bear.PrimaryWeapon.Damage;
-                Console.WriteLine($"{bear.Name} Hit {player.Name} With {bear.PrimaryWeapon.Name} for  {bear.PrimaryWeapon.Damage} damage");
-            }
-            if(fromTo == FromTo.PlayerToBear)
-            {
-                bear.Health += player.PrimaryWeapon.Damage;
-                Console.WriteLine($"{player.Name} Hit {bear.Name} with {player.PrimaryWeapon.Name} for {player.PrimaryWeapon.Damage} damage" );
-                
-            }
-           
+           character.Stamina += character.StaminaReginFactor;
+            
         }
-        public void SecondaryWeaponAttack(Bear bear, Player player, FromTo fromTo)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bear"></param>
+        public void PowerUp()
         {
-            if (fromTo == FromTo.BearToPlayer)
-            {
-                player.Health += bear.SecondaryWeapon.Damage;
-                Console.WriteLine($"{bear.Name} Hit {player.Name} With {bear.SecondaryWeapon.Name} for  {bear.SecondaryWeapon.Damage} damage");
-            }
-            if (fromTo == FromTo.PlayerToBear)
-            {
-                bear.Health += player.SecondaryWeapon.Damage;
-                Console.WriteLine($"{player.Name} Hit {bear.Name} with {player.SecondaryWeapon.Name} for {player.SecondaryWeapon.Damage} damage");
-
-            }
-
+            int defenseUp = 40;
+            Health += defenseUp;
+            Console.WriteLine($"{Name} used agro to Power Up {defenseUp}");
         }
-        public void SidearmWeaponAttack(Bear bear, Player player, FromTo fromTo)
-        {
-            if (fromTo == FromTo.BearToPlayer)
-            {
-                player.Health += bear.Sidearm.Damage;
-                Console.WriteLine($"{bear.Name} Hit {player.Name} With {bear.Sidearm.Name} for  {bear.Sidearm.Damage} damage");
-            }
-            if (fromTo == FromTo.PlayerToBear)
-            {
-                bear.Health += player.Sidearm.Damage;
-                Console.WriteLine($"{player.Name} Hit {bear.Name} with {player.Sidearm.Name} for {player.Sidearm.Damage} damage");
-
-            }
-
-        }
-        public void Healing( Bear bear)
-        {
-            bear.Stamina = 100;
-            bear.Health += bear.Potion;
-            Console.WriteLine($"{bear.Name} Drinks a potion and gains {bear.Potion} health");
-        }
-        public void Healing(Player player)
-        {
-            player.Stamina = 100;
-            player.Health += player.Potion;
-            Console.WriteLine($"{player.Name} Drinks a Potion and gains {player.Potion} health");
-
-        }
-
+       
     }
 }

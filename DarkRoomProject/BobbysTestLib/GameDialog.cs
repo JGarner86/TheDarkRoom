@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BobbysTestLib
-{
+{/// <summary>
+/// 
+/// </summary>
     public static class GameDialog
     {
      public static string mainlevel = "You wake up in what looks like A dungon  /n " +
