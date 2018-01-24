@@ -17,14 +17,16 @@ namespace BobbysTestLib
         static void Main(string[] args)
         {
 
-
+            ConsoleKey keyPress;
             //TestModule.RunTestOne();
             //Console.ReadLine();
             do
             {
-                ConsoleKey test = UserController.UserKeyPress;
-                Console.WriteLine(test);
-            } while (Console.ReadKey().Key != ConsoleKey.Escape);
+                keyPress = UserController.UserKeyPress;
+                Console.WriteLine($"You hit a valid key: {keyPress}");
+                Console.WriteLine();
+               
+            } while (keyPress != ConsoleKey.Escape);
 
             
             
