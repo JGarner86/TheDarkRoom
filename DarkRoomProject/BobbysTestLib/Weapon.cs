@@ -15,6 +15,7 @@ namespace BobbysTestLib
         public  bool Realoable { get; set; }
         public  int AmmoCount { get; set; }
         public int Timer { get; set; }
+        public int Damage { get; set; }
 
 
     }
