@@ -3,18 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Reflection;
 
-namespace BobbysTestLib
+namespace BobbysTestLib.HudModule
 {
-    public class TestModule
+    class HudArmorBar
     {
-
-
-
-
-        
-
-        
     }
 }
