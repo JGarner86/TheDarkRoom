@@ -18,7 +18,7 @@ namespace BobbysTestLib
         public  int AmmoCount { get; set; }
         public int Timer { get; set; }
         public int Damage { get; set; }
-
+        public int ItemPrice { get; set; }
 
     }
 }

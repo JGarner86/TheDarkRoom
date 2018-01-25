@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consumable.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="GameDialog.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="HudModule\HudStatusBar.cs" />
     <Compile Include="HudModule\Point.cs" />
     <Compile Include="Inventory.cs" />
+    <Compile Include="Npc.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,6 +62,7 @@
     <Compile Include="TurnBaseModule.cs" />
     <Compile Include="UserController.cs" />
     <Compile Include="Weapon.cs" />
+    <Compile Include="Wearables.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
