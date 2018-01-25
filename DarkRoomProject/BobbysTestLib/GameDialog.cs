@@ -10,26 +10,15 @@ namespace BobbysTestLib
 /// </summary>
     public static class GameDialog
     {
-     public static string mainlevel = "You wake up in what looks like A dungon  /n " +
-                  "You have a lighter to use it Press the L key";
-     public static string deathlevel = "The lighter worked you now see a new room /n " +
-                    "Press F to move to the next room";
-     public static string LetterL = "L";
-        public static string secondlevel = "As you move to the next room /n" +
-            "You see a bear Press F to fight the bear or R to run";
-        public static string LetterF = "F";
-        public static string LetterR = "R";
-        public static string bearfight = "You decide to fight the bear and die";
-           public static string Safe = "You run from the bear and see and opening \n" +
-            "press E to exit ";
-        public static string LetterE = "E";
-            
-            
-        
-        
-
-    
-
+        public static string Intro;
+        public static string Act1;
+        public static string Act2;
+        public static string NpcInteraction;
+        public static string NpcShop;
+        public static string Act3;
+        public static string Act4;
+        public static string BossFight;
+        public static string EndGame;
 
     }
 

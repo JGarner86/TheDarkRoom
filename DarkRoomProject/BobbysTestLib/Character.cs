@@ -7,20 +7,27 @@ using System.Threading.Tasks;
 namespace BobbysTestLib
 {
    public class Character 
-    {   public enum AttackType {Light,Medium,Heavy}
+    {   public enum AttackType {Light,Medium,Heavy,Ultra }
         public enum FromTo {BearToPlayer,PlayerToBear}
         public string Name { get; set; }
-        public Weapon PrimaryWeapon; 
-        public Weapon SecondaryWeapon = new Weapon();
-        public Weapon Sidearm = new Weapon();
+        public Weapon PrimaryWeapon;
+        public Weapon SecondaryWeapon;
+        public Weapon Sidearm;
+        public Weapon Special;
         public int Health { get; set; }
-        public int Stamina { get; set; }
-        public int Potion { get; set; }
+        public int Stamina { get; set; }   
         public int StaminaReginFactor { get; set; }
         public int Damage { get; set; }
         public bool BlockDamage { get; set; }
         public int GoldAmount { get; set; }
         public int Level { get; set; }
+        public Consumable consumable;
+        
+        
+        
+        
+        
+       
         
 
         public Character()
@@ -107,8 +114,8 @@ namespace BobbysTestLib
         public void Healing(Character character)
         {
             Stamina = 100;
-            Health += Potion;
-            Console.WriteLine($"{Name} Drinks a potion and gains {Potion} health");
+            Health += consumable.Potion;
+            Console.WriteLine($"{Name} Drinks a potion and gains {consumable.Potion} health");
         }
        
         ///
