@@ -9,22 +9,10 @@ namespace BobbysTestLib
 {
     public class testgame
     {
-        public static List<UserInput> TestList = new List<UserInput>();
-
-
-        public static void whatever()
-        {
-
-
-            UserInput.CheckingPress(GameDialog.LetterL, GameDialog.mainlevel);
-            UserInput.CheckingPress(GameDialog.LetterF, GameDialog.deathlevel);
-            UserInput.CheckingPress(GameDialog.LetterR, GameDialog.Safe, GameDialog.bearfight, GameDialog.LetterF,GameDialog.secondlevel);
-            Console.ReadLine();
-            
-           
         
-        }
 
+
+        
 
         public static void gameover()
         {
@@ -49,7 +37,7 @@ namespace BobbysTestLib
                 Console.Clear();
             }   
             Console.Clear();
-            whatever();
+            
 
 
         }

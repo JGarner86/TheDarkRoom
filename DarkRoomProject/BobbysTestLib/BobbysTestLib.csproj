@@ -49,6 +49,9 @@
     <Compile Include="Enemy.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="GameDialog.cs" />
+    <Compile Include="HudModule\HudArmorBar.cs" />
+    <Compile Include="HudModule\HudStatusBar.cs" />
+    <Compile Include="HudModule\Point.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Npc.cs" />
     <Compile Include="Player.cs" />
