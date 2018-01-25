@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace BobbysTestLib.HudModule
 {
@@ -14,7 +15,21 @@ namespace BobbysTestLib.HudModule
         public int StatusAmount
         {
             get { return _statusAmount; }
-            set { _statusAmount = value; UpdateStatusBar(); }
+            set {
+                        if(value < 1)
+                    {
+                        _statusAmount = 1;
+                    }
+                    else if(value > 9)
+                    {
+                        _statusAmount = 9;
+                    }
+                    else
+                    {
+                        _statusAmount = value;
+                    }
+                        UpdateStatusBar();
+                }
         }
         private int _statusAmount = 9;
 
@@ -23,14 +38,30 @@ namespace BobbysTestLib.HudModule
         /// </summary>
         public string Label { get; set; } = "Status";
 
-        private enum CornerType { TopLeft, TopRight, BottomLeft, BottomRight, LeftSide, RightSide }
+        /// <summary>
+        /// Enum to specify position for the inner border char.
+        /// </summary>
+        private enum CornerType { TopLeft = 0, TopRight = 10, BottomLeft = 13, BottomRight = 23, LeftSide = 11, RightSide = 12 }
 
+        /// <summary>
+        /// Enum to specify status indication.
+        /// </summary>
         private enum StatusIndicator { Good, Low, Critical}
 
         /// <summary>
-        /// Change the outer border character for a different look. Default = ▓
+        /// Outer border side line char.
         /// </summary>
-        public char OuterBorderChar { get; set; } = '▓';
+        private char OuterBorderSideChar = '█';
+
+        /// <summary>
+        /// Outer border bottom line char.
+        /// </summary>
+        private char outerBorderBottomLineChar = '▀';
+
+        /// <summary>
+        /// Outer border top line char.
+        /// </summary>
+        private char outerBorderTopLineChar = '▄';
 
         /// <summary>
         /// Top and bottom char for inner border.  Cannot be changed. 
@@ -57,7 +88,15 @@ namespace BobbysTestLib.HudModule
         /// </summary>
         private char innerBorderElboRightBottomCorner = '╝';
 
+        /// <summary>
+        /// Sets inner border side bars.
+        /// </summary>
         private char innerBorderSide = '║';
+
+        /// <summary>
+        /// Sets status bar 
+        /// </summary>
+        private char statusBarChar = '█';
 
         /// <summary>
         /// Starting x,y coordinate to position Hud Element on console. Hud is printed starting from top left.
@@ -87,7 +126,7 @@ namespace BobbysTestLib.HudModule
         /// <summary>
         /// Change the color of the outer border of the StatusBar element. Default = Gray.
         /// </summary>
-        public ConsoleColor OuterBorderColor { get; set; } = ConsoleColor.Gray;
+        public ConsoleColor OuterBorderColor { get; set; } = ConsoleColor.DarkGray;
 
         /// <summary>
         /// Change the color of the inner border of the StatusBar element. Default = White.
@@ -97,12 +136,12 @@ namespace BobbysTestLib.HudModule
         /// <summary>
         /// Maps the outer border relative to the HudPos origin point.
         /// </summary>
-        private int[,] outerBorderMap = new int[38, 2]
+        private int[,] outerBorderMap = new int[32, 2]
         {
             {0,0},{0,1},{0,2},{0,3},{0,4},{0,5},{0,6},{0,7},{0,8},{0,9},{0,10},{0,11},{0,12},
-            {1,-1},{1,0},{1,12},{1,13},
-            {2,-1},{2,0},{2,12},{2,13},
-            {3,-1},{3,0},{3,12},{2,13},
+            {1,0},{1,12},
+            {2,0},{2,12},
+            {3,0},{3,12},
             {4,0},{4,1},{4,2},{4,3},{4,4},{4,5},{4,6},{4,7},{4,8},{4,9},{4,10},{4,11},{4,12}
         };
 
@@ -137,7 +176,7 @@ namespace BobbysTestLib.HudModule
         /// <summary>
         /// MulitDim array that takes the label map and gets mapped to origin.
         /// </summary>
-        private int[,] labelMappedToOrigin = new int[6, 2];
+        private int[,] labelMappedToOrigin = new int[9, 2];
 
         /// <summary>
         /// Maps the StatusBar relative to the HudPos origin point.
@@ -153,10 +192,24 @@ namespace BobbysTestLib.HudModule
         private int[,] statusBarMappedToOrigin = new int[9, 2];
 
 
-
+        /// <summary>
+        /// Updates the status bar if the StatusAmount is changed.
+        /// </summary>
         private void UpdateStatusBar()
         {
+            DrawStatusBar();
+        }
 
+        /// <summary>
+        /// Initialize the status bar.
+        /// </summary>
+        public void Show()
+        {
+            Console.CursorVisible = false;
+            DrawStatusBar();
+            DrawInnerBorder();
+            DrawOuterBorder();
+            DrawLabel();
         }
 
         /// <summary>
@@ -191,7 +244,20 @@ namespace BobbysTestLib.HudModule
             for (int i = 0; i < outerBorderMappedToOrigin.GetLength(0); i++)
             {
                 Console.SetCursorPosition(outerBorderMappedToOrigin[i, 1], outerBorderMappedToOrigin[i, 0]);
-                Console.Write(OuterBorderChar);
+                //Console.Write(i);
+                if (i < 13)
+                {
+                    Console.Write(outerBorderTopLineChar);
+                }
+                else if (i >= 19)
+                {
+                    Console.Write(outerBorderBottomLineChar);
+                }
+                else
+                {
+                    Console.Write(OuterBorderSideChar);
+                }
+                
             }            
         }
 
@@ -225,32 +291,39 @@ namespace BobbysTestLib.HudModule
                     case ((int)CornerType.RightSide):
                         Console.Write(innerBorderSide);
                         break;
+                    default:
+                        Console.Write(InnerBorderStraightChar);
+                        break;
+                    
                 }
-                Console.Write(InnerBorderStraightChar);
+                
             }
 
 
         }
 
+        /// <summary>
+        /// Prints status bar.
+        /// </summary>
         private void DrawStatusBar()
         {
+            
+            Console.ForegroundColor = SetStatusBarConsoleColor();
+          
+            
             CreateMapToOrigin(statusBarMap, ref statusBarMappedToOrigin);
-            StatusIndicator status = GetStatusIndicator();
             for (int i = 0; i < StatusAmount; i++)
             {
-                switch (status)
-                {
-                    case StatusIndicator.Good:
-                        Console.ForegroundColor = StatusGoodColor;
-                        break;
-                    case StatusIndicator.Low:
-                        Console.ForegroundColor = StatusLowColor;
-                        break;
-                    case StatusIndicator.Critical:
-                        Console.ForegroundColor = StatusCriticalColor;
-                        break;
-                }
+                Console.SetCursorPosition(statusBarMappedToOrigin[i, 1], statusBarMappedToOrigin[i, 0]);
+                Console.Write(statusBarChar);
             }
+            for (int i = 8; i > StatusAmount; i--)
+            {
+                Console.SetCursorPosition(statusBarMappedToOrigin[i, 1], statusBarMappedToOrigin[i, 0]);
+                Console.Write(" ");
+            }
+            
+            
 
         }
 
@@ -287,7 +360,78 @@ namespace BobbysTestLib.HudModule
             return StatusIndicator.Good;
 
         }
+
+        /// <summary>
+        /// Gets the status bar color.
+        /// </summary>
+        /// <returns>Returns console color for status bar. </returns>
+        private ConsoleColor SetStatusBarConsoleColor()
+        {
+            StatusIndicator status = GetStatusIndicator();
+            ConsoleColor barColor = ConsoleColor.Gray;
+            switch (status)
+            {
+                case StatusIndicator.Good:
+                    barColor = StatusGoodColor;
+                    break;
+                case StatusIndicator.Low:
+                    barColor = StatusLowColor;
+                    break;
+                case StatusIndicator.Critical:
+                    barColor = StatusCriticalColor;
+                    break;
+            }
+            return barColor;
+        }
         
+        /// <summary>
+        /// Show preview to console.  Mocks a health, stammina, and ability bar.
+        /// </summary>
+        public static void Preview()
+        {
+            Random random = new Random();
+            HudModule.HudStatusBar healthBar = new HudModule.HudStatusBar()
+            {
+                HudPosCoordinate = new HudModule.Point(5, 5),
+                Label = "Health",
+            };
+
+            HudModule.HudStatusBar stamminaBar = new HudModule.HudStatusBar()
+            {
+                HudPosCoordinate = new HudModule.Point(10, 5),
+                Label = "Stammina",
+                LabelColor = ConsoleColor.Magenta,
+                StatusGoodColor = ConsoleColor.DarkBlue,
+                StatusLowColor = ConsoleColor.Blue,
+                StatusCriticalColor = ConsoleColor.Magenta,
+
+            };
+
+            HudModule.HudStatusBar abilityBar = new HudModule.HudStatusBar()
+            {
+                HudPosCoordinate = new HudModule.Point(15, 5),
+                Label = "Ability",
+                LabelColor = ConsoleColor.DarkCyan,
+                StatusGoodColor = ConsoleColor.Cyan,
+                StatusLowColor = ConsoleColor.DarkCyan,
+                StatusCriticalColor = ConsoleColor.Gray
+            };
+
+            healthBar.Show();
+            stamminaBar.Show();
+            abilityBar.Show();
+            int x = 0;
+            while (x < 1000)
+            {
+                healthBar.StatusAmount = random.Next(1, 9);
+                stamminaBar.StatusAmount = random.Next(1, 9);
+                abilityBar.StatusAmount = random.Next(1, 9);
+                Thread.Sleep(250);
+                x++;
+            }
+
+            Console.ReadLine();
+        }
 
     }
 }
