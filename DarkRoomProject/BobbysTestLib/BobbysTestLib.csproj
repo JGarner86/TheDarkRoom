@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ArtModule.cs" />
     <Compile Include="Consumable.cs" />
     <Compile Include="Characters\Enemy.cs" />
     <Compile Include="Characters\Character.cs" />
@@ -70,5 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="AsciiArt\Test.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
