@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BobbysTestLib
 {/// <summary>
-/// 
+/// Proprites For GameDialog
 /// </summary>
     public static class GameDialog
     {

@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BobbysTestLib
-{
+{    /// <summary>
+    /// Properties For Inventory
+    /// </summary>
     public class Inventory
     {
        public int Weapoms { get; set; }

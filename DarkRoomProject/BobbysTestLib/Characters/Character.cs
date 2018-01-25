@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BobbysTestLib
-{
+{   /// <summary>
+    /// Propites For Character
+    /// </summary>
    public class Character 
     {   public enum AttackType {Light,Medium,Heavy,Ultra }
         public enum FromTo {BearToPlayer,PlayerToBear}

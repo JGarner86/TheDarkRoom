@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BobbysTestLib
-{
+{   /// <summary>
+    /// Properites For Wearable
+    /// </summary>
     class Wearables
     {
        public int Head { get; set; }

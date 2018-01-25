@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace BobbysTestLib
 {
-
+    /// <summary>
+    /// Proprties For Player
+    /// </summary>
     public class Player : Character
-    {
+    {  
         public int ExpPoints { get; set; }
         public int FleeCount { get; set; } = 3;
         public int SwordSlashDamageAmount
@@ -16,6 +18,11 @@ namespace BobbysTestLib
             get { return _swordSlashDamageAmount; }
             set { _swordSlashDamageAmount = value; }
         }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
         public int FinalSlashDamageAmount
         {
             get { return _swordSlashDamageAmount; }
@@ -24,7 +31,10 @@ namespace BobbysTestLib
         private int _finalSlashDamageAmount;
         private int _swordSlashDamageAmount;
 
-
+        /// <summary>
+        /// SwordSlash Damage Amount
+        /// </summary>
+        /// <param name="character"></param>
         public void SwordSlash(Character character)
         {
            int attackAmount = -40;
@@ -34,7 +44,7 @@ namespace BobbysTestLib
         }
 
         /// <summary>
-        /// 
+        /// FinalSlash Damage Amount
         /// </summary>
         /// <param name="character"></param>
        public void FinalSlash (Character character)

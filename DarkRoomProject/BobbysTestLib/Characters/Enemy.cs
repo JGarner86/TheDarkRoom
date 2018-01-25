@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace BobbysTestLib
 {
     public class Enemy : Character
-    {
+    {   /// <summary>
+        /// Proprites For Enemy
+        /// </summary>
         public bool CanFlee = false;
         public int ExpReward { get; set; }
         public int ClawSlashDamageAmount
@@ -16,6 +18,10 @@ namespace BobbysTestLib
             set { _clawSlash = value;  }
 
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public int HeavySlashDamageAmount
         {
             get { return _heavySlash; }
