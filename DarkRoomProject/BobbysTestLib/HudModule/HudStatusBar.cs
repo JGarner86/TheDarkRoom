@@ -33,6 +33,8 @@ namespace BobbysTestLib.HudModule
         }
         private int _statusAmount = 9;
 
+
+
         /// <summary>
         /// Label property of StatusBar. Max string length is 9. Default = "Status". 
         /// </summary>
@@ -106,7 +108,9 @@ namespace BobbysTestLib.HudModule
         /// <summary>
         /// Change the color of the StatusBar label. Default = Green.
         /// </summary>
-        public ConsoleColor LabelColor { get; set; } = ConsoleColor.Green;
+        public ConsoleColor LabelForegroundColor { get; set; } = ConsoleColor.Green;
+
+        public ConsoleColor LabelBackgroundColor { get; set; } = ConsoleColor.Black;
 
         /// <summary>
         /// Change the color of the StatusBar if greater than 6. Default = Green
@@ -224,13 +228,16 @@ namespace BobbysTestLib.HudModule
             else
             {
                 CreateMapToOrigin(labelMap, ref labelMappedToOrigin);
-                Console.ForegroundColor = LabelColor;
+                Console.BackgroundColor = LabelBackgroundColor;
+                Console.ForegroundColor = LabelForegroundColor;
                 char[] labelSplit = Label.ToCharArray();
                 for (int i = 0; i < labelSplit.Length; i++)
                 {
                     Console.SetCursorPosition(labelMappedToOrigin[i, 1], labelMappedToOrigin[i, 0]);
                     Console.Write(labelSplit[i]);
                 }
+                Console.BackgroundColor = ConsoleColor.Black;
+                
             }
         }
 
@@ -394,13 +401,14 @@ namespace BobbysTestLib.HudModule
             {
                 HudPosCoordinate = new HudModule.Point(5, 5),
                 Label = "Health",
+                
             };
 
             HudModule.HudStatusBar stamminaBar = new HudModule.HudStatusBar()
             {
                 HudPosCoordinate = new HudModule.Point(10, 5),
                 Label = "Stammina",
-                LabelColor = ConsoleColor.Magenta,
+                LabelForegroundColor = ConsoleColor.Magenta,
                 StatusGoodColor = ConsoleColor.DarkBlue,
                 StatusLowColor = ConsoleColor.Blue,
                 StatusCriticalColor = ConsoleColor.Magenta,
@@ -411,7 +419,7 @@ namespace BobbysTestLib.HudModule
             {
                 HudPosCoordinate = new HudModule.Point(15, 5),
                 Label = "Ability",
-                LabelColor = ConsoleColor.DarkCyan,
+                LabelForegroundColor = ConsoleColor.DarkCyan,
                 StatusGoodColor = ConsoleColor.Cyan,
                 StatusLowColor = ConsoleColor.DarkCyan,
                 StatusCriticalColor = ConsoleColor.Gray

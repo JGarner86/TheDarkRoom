@@ -14,13 +14,13 @@ namespace BobbysTestLib
         public void Itemlist()
         {
             List<Inventory> Inventorylist = new List<Inventory>();
-         Consumable = new Consumable();
-            Inventorylist.Add(new Inventory()
-            {
+         //Consumable = new Consumable();
+         //   Inventorylist.Add(new Inventory()
+         //   {
 
-            }
+         //   }
 
-            Inventorylist.Add()
+            //Inventorylist.Add()
         }
        
             
