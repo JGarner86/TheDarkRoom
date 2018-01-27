@@ -14,8 +14,10 @@ namespace BobbysTestLib.ImageAndAnimation
 
         
 
-        public static void GetPixelData(Color cValue)
+        public static void GetPixelData(Color cValue, ref AsciiImage image)
         {
+           
+
             Color[] cTable = cColors.Select(x => Color.FromArgb(x)).ToArray();
             char[] rList = new char[] { (char)9617, (char)9618, (char)9619, (char)9608 }; // 1/4, 2/4, 3/4, 4/4
             int[] bestHit = new int[] { 0, 0, 4, int.MaxValue }; //ForeColor, BackColor, Symbol, Score
@@ -43,27 +45,33 @@ namespace BobbysTestLib.ImageAndAnimation
                     }
                 }
             }
-            Console.ForegroundColor = (ConsoleColor)bestHit[0];
-            Console.BackgroundColor = (ConsoleColor)bestHit[1];
-            Console.Write(rList[bestHit[2] - 1]);
+            image.PixelForegroundColor[image.Size] = (ConsoleColor)bestHit[0];
+            image.PixelBackgroundColor[image.Size] = (ConsoleColor)bestHit[1];
+            image.DistanceChar[image.Size] = rList[bestHit[2] - 1];
         }
 
-        public static void ConsoleWriteImage(Bitmap source)
+        public static void BuildAsciiImage(Bitmap source, out AsciiImage image, string path)
         {
+            
+            
             int sMax = 39;
             decimal percent = Math.Min(decimal.Divide(sMax, source.Width), decimal.Divide(sMax, source.Height));
             Size dSize = new Size((int)(source.Width * percent), (int)(source.Height * percent));
             Bitmap bmpMax = new Bitmap(source, dSize.Width * 2, dSize.Height);
+            int size = (dSize.Width * 2) * dSize.Height;
+            image = new AsciiImage(new Point[size], new ConsoleColor[size], new ConsoleColor[size], new char[size]);
+            image.Size = size;
+            
             for (int i = 0; i < dSize.Height; i++)
             {
                 for (int j = 0; j < dSize.Width; j++)
                 {
-                    GetPixelData(bmpMax.GetPixel(j * 2, i));
-                    GetPixelData(bmpMax.GetPixel(j * 2 + 1, i));
+                    GetPixelData(bmpMax.GetPixel(j * 2, i), ref image);
+                    GetPixelData(bmpMax.GetPixel(j * 2 + 1, i), ref image);
                 }
-                Console.WriteLine();
+                //Console.WriteLine();
             }
-            Console.ResetColor();
+            //Console.ResetColor();
         }
     }
 }
