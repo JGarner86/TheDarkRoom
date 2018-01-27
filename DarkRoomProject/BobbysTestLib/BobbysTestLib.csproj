@@ -35,8 +35,13 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,14 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArtModule.cs" />
+    <Compile Include="ImageAndAnimation\ArtModule.cs" />
     <Compile Include="Consumable.cs" />
     <Compile Include="Characters\Enemy.cs" />
     <Compile Include="Characters\Character.cs" />
     <Compile Include="GameDialog.cs" />
+    <Compile Include="HudModule\ControlMapper.cs" />
     <Compile Include="HudModule\HudArmorBar.cs" />
     <Compile Include="HudModule\HudStatusBar.cs" />
-    <Compile Include="HudModule\Point.cs" />
+    <Compile Include="Point.cs" />
+    <Compile Include="ImageAndAnimation\AsciiImage.cs" />
+    <Compile Include="ImageAndAnimation\ImageProcessor.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Characters\Npc.cs" />
     <Compile Include="Characters\Player.cs" />

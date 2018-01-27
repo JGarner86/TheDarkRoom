@@ -42,13 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arrays.cs" />
     <Compile Include="Attributes.cs" />
     <Compile Include="DelegatesAndEvents.cs" />
     <Compile Include="DoLoops.cs" />
     <Compile Include="ForLoops.cs" />
     <Compile Include="Generics.cs" />
     <Compile Include="LambdaExpressions.cs" />
+    <Compile Include="LearnArrays.cs" />
     <Compile Include="LearnInterfaces.cs" />
     <Compile Include="LearnNamespaces.cs" />
     <Compile Include="LearnReflection.cs" />

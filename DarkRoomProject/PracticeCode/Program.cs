@@ -17,11 +17,7 @@ namespace PracticeCode
         static void Main(string[] args)
         {
 
-            //Arrays.Main();
-            //Attributes.Main();
-            //DelegatesAndEvents.Main();
-            //Generics.Main();
-            //Lists.Main();
+            
             
         }
     }

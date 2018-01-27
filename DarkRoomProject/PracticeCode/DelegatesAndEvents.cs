@@ -11,7 +11,7 @@ namespace PracticeCode
         /// <summary>
         /// This will be the method called in program to run your test, so put the code that you want to run in here, then call it in program.cs
         /// </summary>
-        public static void Main()
+        public static void RunCode()
         {
 
         }
