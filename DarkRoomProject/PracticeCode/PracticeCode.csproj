@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9BFF7CE3-5502-4299-9C12-C801503BC5DF}</ProjectGuid>
+    <ProjectGuid>{BC83E389-D0A6-47BC-A859-55868E406EE9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BobbysTestLib</RootNamespace>
-    <AssemblyName>BobbysTestLib</AssemblyName>
+    <RootNamespace>PracticeCode</RootNamespace>
+    <AssemblyName>PracticeCode</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,16 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,37 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ImageAndAnimation\ArtModule.cs" />
-    <Compile Include="Consumable.cs" />
-    <Compile Include="Characters\Enemy.cs" />
-    <Compile Include="Characters\Character.cs" />
-    <Compile Include="GameDialog.cs" />
-    <Compile Include="HudModule\ControlMapper.cs" />
-    <Compile Include="HudModule\HudArmorBar.cs" />
-    <Compile Include="HudModule\HudStatusBar.cs" />
-    <Compile Include="Point.cs" />
-    <Compile Include="ImageAndAnimation\AsciiImage.cs" />
-    <Compile Include="ImageAndAnimation\ImageProcessor.cs" />
-    <Compile Include="Inventory.cs" />
-    <Compile Include="Characters\Npc.cs" />
-    <Compile Include="Characters\Player.cs" />
-    <Compile Include="ObtanableItem.cs" />
+    <Compile Include="Attributes.cs" />
+    <Compile Include="DelegatesAndEvents.cs" />
+    <Compile Include="DoLoops.cs" />
+    <Compile Include="ForLoops.cs" />
+    <Compile Include="Generics.cs" />
+    <Compile Include="LambdaExpressions.cs" />
+    <Compile Include="LearnArrays.cs" />
+    <Compile Include="LearnInterfaces.cs" />
+    <Compile Include="LearnNamespaces.cs" />
+    <Compile Include="LearnReflection.cs" />
+    <Compile Include="Lists.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="testgame.cs" />
-    <Compile Include="TestModule.cs" />
-    <Compile Include="TurnBaseModule.cs" />
-    <Compile Include="UserController.cs" />
-    <Compile Include="Weapon.cs" />
-    <Compile Include="Wearables.cs" />
+    <Compile Include="WhileLoops.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="AsciiArt\Test.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

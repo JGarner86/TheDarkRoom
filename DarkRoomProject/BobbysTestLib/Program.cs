@@ -18,7 +18,12 @@ namespace BobbysTestLib
         static void Main(string[] args)
         {
 
-            HudModule.HudStatusBar.Preview();
+            //HudModule.HudStatusBar.Preview();
+            //ArtModule.PrintAsciiFile();
+            
+            ArtModule.PrintPic();
+            Console.ReadLine();
+
 
         }
 
