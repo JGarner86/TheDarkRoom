@@ -23,7 +23,7 @@ namespace BobbysTestLib
         public bool BlockDamage { get; set; }
         public int GoldAmount { get; set; }
         public int Level { get; set; }
-        public Consumable consumable;
+        public Potion consumable;
         
         
         
