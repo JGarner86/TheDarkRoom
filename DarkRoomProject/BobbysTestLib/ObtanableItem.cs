@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace BobbysTestLib
 {
-    class ObtanableItem
-    {
-        public int Gold { get; set; }
-        public int 
-    }
+   public class ObtanableItem
+   {
+        public Guid ID { get; set; }
+        public string Name { get; set; }
+        public int StackableAmount { get; set; }
+
+        protected ObtanableItem()
+        {
+            StackableAmount = 1;  
+
+        }
+
+   }
+           
 }

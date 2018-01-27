@@ -11,17 +11,17 @@ namespace BobbysTestLib
     public class Inventory
     {
 
-        public void Itemlist()
-        {
-            List<Inventory> Inventorylist = new List<Inventory>();
-         //Consumable = new Consumable();
-         //   Inventorylist.Add(new Inventory()
-         //   {
+        public const int MaxSlotsInInventory = 15;
+        public readonly List<ObtanableItem> InventoryList = new List<ObtanableItem>();
+        public void AddItem()        
+            
+         
 
-         //   }
+         
+        
+       
 
-            //Inventorylist.Add()
-        }
+         
        
             
           

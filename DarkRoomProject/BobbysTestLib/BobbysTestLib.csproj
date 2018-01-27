@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImageAndAnimation\ArtModule.cs" />
-    <Compile Include="Consumable.cs" />
+    <Compile Include="Potion.cs" />
     <Compile Include="Characters\Enemy.cs" />
     <Compile Include="Characters\Character.cs" />
     <Compile Include="GameDialog.cs" />

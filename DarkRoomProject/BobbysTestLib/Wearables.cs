@@ -8,8 +8,12 @@ namespace BobbysTestLib
 {   /// <summary>
     /// Properites For Wearable
     /// </summary>
-    class Wearables
+    class Wearables:ObtanableItem
     {
+        public Wearables()
+        {
+            StackableAmount = 1;
+        }
        public int Head { get; set; }
        public int Tops { get; set; }
        public int Bottoms { get; set; }
