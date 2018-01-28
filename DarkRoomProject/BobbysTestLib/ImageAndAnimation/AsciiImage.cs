@@ -37,6 +37,20 @@ namespace BobbysTestLib.ImageAndAnimation
             Console.ResetColor();
         }
 
+        public void PrintImage(Point referencePoint)
+        {
+            for (int i = 0; i < Cooridinate.Length; i++)
+            {
+                int newX = referencePoint.X + Cooridinate[i].X;
+                int newY = referencePoint.Y + Cooridinate[i].Y;
+                Console.SetCursorPosition(newX, newY);
+                Console.BackgroundColor = PixelBackgroundColor[i];
+                Console.ForegroundColor = PixelForegroundColor[i];
+                Console.Write(DistanceChar[i]);
+            }
+            Console.ResetColor();
+        }
+
 
     }
 }

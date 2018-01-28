@@ -116,8 +116,8 @@ namespace BobbysTestLib
         public void Healing(Character character)
         {
             Stamina = 100;
-            Health += consumable.Potion;
-            Console.WriteLine($"{Name} Drinks a potion and gains {consumable.Potion} health");
+            //Health += consumable.Potion;
+            //Console.WriteLine($"{Name} Drinks a potion and gains {consumable.Potion} health");
         }
        
         ///

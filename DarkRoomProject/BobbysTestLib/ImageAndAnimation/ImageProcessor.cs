@@ -52,38 +52,41 @@ namespace BobbysTestLib.ImageAndAnimation
 
         public static AsciiImage BuildAsciiImage(string path)
         {
-
-            Bitmap source = new Bitmap(path, true);
-            int sMax = 39;
-            decimal percent = Math.Min(decimal.Divide(sMax, source.Width), decimal.Divide(sMax, source.Height));
-            Size dSize = new Size((int)(source.Width * percent), (int)(source.Height * percent));
-            Bitmap bmpMax = new Bitmap(source, dSize.Width * 2, dSize.Height);
-            int size = (dSize.Width * 2) * dSize.Height;
-            AsciiImage image = new AsciiImage(new Point[size], new ConsoleColor[size], new ConsoleColor[size], new char[size]);
-            int nextPixel = 0;
-            int nextX = 0;
-            for (int i = 0; i < dSize.Height; i++)
+            using(Bitmap source = new Bitmap(path, true))
             {
-                for (int j = 0; j < dSize.Width; j++)
+                int sMax = 45;
+                decimal percent = Math.Min(decimal.Divide(sMax, source.Width), decimal.Divide(sMax, source.Height));
+                Size dSize = new Size((int)(source.Width * percent), (int)(source.Height * percent));
+                Bitmap bmpMax = new Bitmap(source, dSize.Width * 2, dSize.Height);
+                int size = (dSize.Width * 2) * dSize.Height;
+                AsciiImage image = new AsciiImage(new Point[size], new ConsoleColor[size], new ConsoleColor[size], new char[size]);
+                int nextPixel = 0;
+                int nextX = 0;
+                for (int i = 0; i < dSize.Height; i++)
                 {
-                    image.NextPixel = nextPixel;
-                    image.Cooridinate[nextPixel] = new Point(nextX, i);
-                    GetPixelData(bmpMax.GetPixel(j * 2, i), ref image);
+                    for (int j = 0; j < dSize.Width; j++)
+                    {
+                        image.NextPixel = nextPixel;
+                        image.Cooridinate[nextPixel] = new Point(nextX, i);
+                        GetPixelData(bmpMax.GetPixel(j * 2, i), ref image);
 
-                    nextPixel++;
-                    image.NextPixel = nextPixel;
-                    nextX++;
-                    image.Cooridinate[nextPixel] = new Point(nextX, i);
-                    GetPixelData(bmpMax.GetPixel(j * 2 + 1, i), ref image);
+                        nextPixel++;
+                        image.NextPixel = nextPixel;
+                        nextX++;
+                        image.Cooridinate[nextPixel] = new Point(nextX, i);
+                        GetPixelData(bmpMax.GetPixel(j * 2 + 1, i), ref image);
 
-                    nextPixel++;
-                    nextX++;
+                        nextPixel++;
+                        nextX++;
+                    }
+                    nextX = 0;
+                    //Console.WriteLine();
                 }
-                nextX = 0;
-                //Console.WriteLine();
+                //Console.ResetColor();
+                return image;
             }
-            //Console.ResetColor();
-            return image;
+            
+            
         }
     }
 }
