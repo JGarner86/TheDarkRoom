@@ -16,9 +16,7 @@ namespace PracticeCode
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-
-            
-            
+            DelegatesAndEvents.RunCode();                        
         }
     }
 }

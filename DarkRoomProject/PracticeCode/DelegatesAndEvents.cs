@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PracticeCode
 {
+
+    delegate void Operation(int num);
+
     public class DelegatesAndEvents
     {
         /// <summary>
@@ -13,8 +16,24 @@ namespace PracticeCode
         /// </summary>
         public static void RunCode()
         {
+            Operation doub = Double;
+            doub(2);
+            doub += Triple;
+            doub += Double;//
+            doub(3);
 
         }
+
+        static void Double(int num)
+        {
+            Console.WriteLine($"{num} x 2 = {num * 2}");
+        }
+
+        static void Triple(int num)
+        {
+            Console.WriteLine($"{num} x 3 = {num * 3}");
+        }
+
 
     }
 }
