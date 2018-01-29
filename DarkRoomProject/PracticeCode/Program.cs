@@ -16,9 +16,15 @@ namespace PracticeCode
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-
             
-            
+            Lists.RunCode();
+            Console.ReadLine();
+              
         }
+
+        
     }
+
+    
 }
+    

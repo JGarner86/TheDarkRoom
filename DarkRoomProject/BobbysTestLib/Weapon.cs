@@ -15,7 +15,7 @@ namespace BobbysTestLib
             
         }
         public int Weight { get; set; }
-        public  string Name { get; set; }
+      
         public  bool Breakable { get; set; }
         public  bool Throwable { get; set; }
         public  bool Realoable { get; set; }

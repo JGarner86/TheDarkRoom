@@ -399,14 +399,14 @@ namespace BobbysTestLib.HudModule
             Random random = new Random();
             HudModule.HudStatusBar healthBar = new HudModule.HudStatusBar()
             {
-                HudPosCoordinate = new HudModule.Point(5, 5),
+                HudPosCoordinate = new Point(5, 5),
                 Label = "Health",
                 
             };
 
             HudModule.HudStatusBar stamminaBar = new HudModule.HudStatusBar()
             {
-                HudPosCoordinate = new HudModule.Point(10, 5),
+                HudPosCoordinate = new Point(10, 5),
                 Label = "Stammina",
                 LabelForegroundColor = ConsoleColor.Magenta,
                 StatusGoodColor = ConsoleColor.DarkBlue,
@@ -417,7 +417,7 @@ namespace BobbysTestLib.HudModule
 
             HudModule.HudStatusBar abilityBar = new HudModule.HudStatusBar()
             {
-                HudPosCoordinate = new HudModule.Point(15, 5),
+                HudPosCoordinate = new Point(15, 5),
                 Label = "Ability",
                 LabelForegroundColor = ConsoleColor.DarkCyan,
                 StatusGoodColor = ConsoleColor.Cyan,
