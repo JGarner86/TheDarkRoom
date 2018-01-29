@@ -14,7 +14,7 @@ namespace BobbysTestLib.ImageAndAnimation
 
         
 
-        public static void GetPixelData(Color cValue, ref AsciiImage image)
+        private static void GetPixelData(Color cValue, ref AsciiImage image)
         {
            
 
@@ -45,33 +45,48 @@ namespace BobbysTestLib.ImageAndAnimation
                     }
                 }
             }
-            image.PixelForegroundColor[image.Size] = (ConsoleColor)bestHit[0];
-            image.PixelBackgroundColor[image.Size] = (ConsoleColor)bestHit[1];
-            image.DistanceChar[image.Size] = rList[bestHit[2] - 1];
+            image.PixelForegroundColor[image.NextPixel] = (ConsoleColor)bestHit[0];
+            image.PixelBackgroundColor[image.NextPixel] = (ConsoleColor)bestHit[1];
+            image.DistanceChar[image.NextPixel] = rList[bestHit[2] - 1];
         }
 
-        public static void BuildAsciiImage(Bitmap source, out AsciiImage image, string path)
+        public static AsciiImage BuildAsciiImage(string path)
         {
-            
-            
-            int sMax = 39;
-            decimal percent = Math.Min(decimal.Divide(sMax, source.Width), decimal.Divide(sMax, source.Height));
-            Size dSize = new Size((int)(source.Width * percent), (int)(source.Height * percent));
-            Bitmap bmpMax = new Bitmap(source, dSize.Width * 2, dSize.Height);
-            int size = (dSize.Width * 2) * dSize.Height;
-            image = new AsciiImage(new Point[size], new ConsoleColor[size], new ConsoleColor[size], new char[size]);
-            image.Size = size;
-            
-            for (int i = 0; i < dSize.Height; i++)
+            using(Bitmap source = new Bitmap(path, true))
             {
-                for (int j = 0; j < dSize.Width; j++)
+                int sMax = 45;
+                decimal percent = Math.Min(decimal.Divide(sMax, source.Width), decimal.Divide(sMax, source.Height));
+                Size dSize = new Size((int)(source.Width * percent), (int)(source.Height * percent));
+                Bitmap bmpMax = new Bitmap(source, dSize.Width * 2, dSize.Height);
+                int size = (dSize.Width * 2) * dSize.Height;
+                AsciiImage image = new AsciiImage(new Point[size], new ConsoleColor[size], new ConsoleColor[size], new char[size]);
+                int nextPixel = 0;
+                int nextX = 0;
+                for (int i = 0; i < dSize.Height; i++)
                 {
-                    GetPixelData(bmpMax.GetPixel(j * 2, i), ref image);
-                    GetPixelData(bmpMax.GetPixel(j * 2 + 1, i), ref image);
+                    for (int j = 0; j < dSize.Width; j++)
+                    {
+                        image.NextPixel = nextPixel;
+                        image.Cooridinate[nextPixel] = new Point(nextX, i);
+                        GetPixelData(bmpMax.GetPixel(j * 2, i), ref image);
+
+                        nextPixel++;
+                        image.NextPixel = nextPixel;
+                        nextX++;
+                        image.Cooridinate[nextPixel] = new Point(nextX, i);
+                        GetPixelData(bmpMax.GetPixel(j * 2 + 1, i), ref image);
+
+                        nextPixel++;
+                        nextX++;
+                    }
+                    nextX = 0;
+                    //Console.WriteLine();
                 }
-                //Console.WriteLine();
+                //Console.ResetColor();
+                return image;
             }
-            //Console.ResetColor();
+            
+            
         }
     }
 }

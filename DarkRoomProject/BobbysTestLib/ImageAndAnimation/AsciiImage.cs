@@ -14,7 +14,7 @@ namespace BobbysTestLib.ImageAndAnimation
         public ConsoleColor[] PixelBackgroundColor { get; set; }
         public ConsoleColor[] PixelForegroundColor { get; set; }
         public char[] DistanceChar { get; set; }
-        public int Size { get; set; }
+        public int NextPixel { get; set; }
 
         public AsciiImage(Point[] _point, ConsoleColor[] _pixelBackgroundColor, ConsoleColor[] _pixelForegroundColor, char[] _distanceChar)
         {
@@ -23,6 +23,32 @@ namespace BobbysTestLib.ImageAndAnimation
             PixelForegroundColor = _pixelForegroundColor;
             DistanceChar = _distanceChar;
             
+        }
+
+        public void PrintImage()
+        {
+            for (int i = 0; i < Cooridinate.Length; i++)
+            {
+                Console.SetCursorPosition(Cooridinate[i].X,Cooridinate[i].Y);
+                Console.BackgroundColor = PixelBackgroundColor[i];
+                Console.ForegroundColor = PixelForegroundColor[i];
+                Console.Write(DistanceChar[i]);
+            }
+            Console.ResetColor();
+        }
+
+        public void PrintImage(Point referencePoint)
+        {
+            for (int i = 0; i < Cooridinate.Length; i++)
+            {
+                int newX = referencePoint.X + Cooridinate[i].X;
+                int newY = referencePoint.Y + Cooridinate[i].Y;
+                Console.SetCursorPosition(newX, newY);
+                Console.BackgroundColor = PixelBackgroundColor[i];
+                Console.ForegroundColor = PixelForegroundColor[i];
+                Console.Write(DistanceChar[i]);
+            }
+            Console.ResetColor();
         }
 
 

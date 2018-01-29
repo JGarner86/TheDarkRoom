@@ -13,18 +13,7 @@ namespace BobbysTestLib
 
         public const int MaxSlotsInInventory = 15;
         public readonly List<ObtanableItem> InventoryList = new List<ObtanableItem>();
-        public void AddItem(ObtanableItem item, int Amount)
-        {
-            while (Amount > 0)
-                {
-            //    if (InventoryList.Exists(InventoryItem => (InventoryItem.ID == item.ID) && (InventoryItem.StackableAmount < item.StackableAmount)));
-            //    {
-            //        //InvetoryList invetoryList =  invetoryList.ID() 
-
-                 
-
-            }
-        }
+        //public void AddItem()        
             
          
 
