@@ -13,19 +13,23 @@ namespace PracticeCode
         /// <summary>
         /// This will be the method called in program to run your test, so put the code that you want to run in here, then call it in program.cs
         /// </summary>
-       public static void RunCode()
+
+
+        
+        public static void RunCode()
         {
-           
+
             
             Person john = new Person()
             {
                 FirstName = "John",
                 LastName = "Smith"
             };
-            Func<Person, string> FullName = person => { return $"{person.FirstName} {person.LastName}"; };
+            Func<Person, int, string> FullName = (person, age) => { return $"{person.FirstName} {person.LastName} is {age} years old."; };
 
-            string johnsFullName = FullName(john);
+            string johnsFullName = FullName(john, 45);
             Console.WriteLine(johnsFullName);
+            
             
         }
 
@@ -39,6 +43,22 @@ namespace PracticeCode
         public static string FullName(Person person)
         {
             return $"{person.FirstName} {person.LastName}";
+        }
+    }
+
+    public delegate void SlapEventHandler(object sender, SlapEventArgs args);
+
+    public class SlapEventArgs : EventArgs
+    {
+        public string SlapType { get; set; } = "Bitch Slapped";
+    }
+    public class Slap
+    {
+        public event SlapEventHandler Slapped;
+
+        public void BitchSlapped(Person slappedBy, Person person)
+        {
+            Slapped(this, new SlapEventArgs());
         }
     }
 
