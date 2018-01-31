@@ -17,9 +17,9 @@ namespace BobbysTestLib
         {
             while (AmountToAdd > 0)
             {
-                if (InventoryList.Exists(listitem => (listitem.ID == item.ID) && (AmountToAdd < item.StackableAmount)))
+                if (InventoryList.Exists( x=> (x.Item.ID == item.ID) && (AmountToAdd < item.StackableAmount)))
                 {
-                    InvetoryItem invetoryList = InventoryList.First(listitem => (listitem.ID == item.ID) && (AmountToAdd < item.StackableAmount));
+                    InvetoryItem invetoryList = InventoryList.First(x => (x.Item.ID == item.ID) && (AmountToAdd < item.StackableAmount));
                     int MaxAmountPerStack = (item.StackableAmount - invetoryList.ItemAmount);
                     int AmountToAddPerStack = Math.Min(AmountToAdd, MaxAmountPerStack);
                     invetoryList.AddToAmount(AmountToAddPerStack);
