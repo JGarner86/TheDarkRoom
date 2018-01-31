@@ -8,12 +8,8 @@ namespace BobbysTestLib
 {   /// <summary>
     /// Proberites for Weapon Types
     /// </summary>
-   public class Weapon: ObtanableItem
+   public class Weapon : ObtanableItem
     {
-        public Weapon()
-        {
-            
-        }
         public int Weight { get; set; }
         public bool Breakable { get; set; }
         public bool Throwable { get; set; }
@@ -22,6 +18,12 @@ namespace BobbysTestLib
         public int Timer { get; set; }
         public int Damage { get; set; }
         public int ItemPrice { get; set; }
+
+        public Weapon()
+        {
+            
+        }
+        
 
     }
 }

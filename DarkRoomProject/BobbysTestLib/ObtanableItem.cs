@@ -16,7 +16,8 @@ namespace BobbysTestLib
 
         protected ObtanableItem()
         {
-            StackableAmount = 1;  
+            StackableAmount = 1;
+            
 
         }
 
