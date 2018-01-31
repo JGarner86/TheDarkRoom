@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="Animation\AnimationTest.cs" />
     <Compile Include="ImageAndAnimation\ArtModule.cs" />
-    <Compile Include="InvetoryList.cs" />
+    <Compile Include="InventoryList.cs" />
     <Compile Include="Potion.cs" />
     <Compile Include="Characters\Enemy.cs" />
     <Compile Include="Characters\Character.cs" />

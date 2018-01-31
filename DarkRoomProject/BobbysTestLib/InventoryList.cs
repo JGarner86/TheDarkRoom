@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace BobbysTestLib
 {
-   public class InvetoryList:ObtanableItem
+   public class InventoryList:ObtanableItem
     {
         public ObtanableItem InventoryItem { get; private set; }
         public int ItemAmount { get; private set; }
 
-        public InvetoryList(ObtanableItem item, int Amount)
+        public InventoryList(ObtanableItem item, int Amount)
         {
             InventoryItem = item;
             ItemAmount = Amount;
