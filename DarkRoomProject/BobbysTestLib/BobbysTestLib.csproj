@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animation\AnimationTest.cs" />
     <Compile Include="ImageAndAnimation\ArtModule.cs" />
     <Compile Include="InvetoryList.cs" />
     <Compile Include="Potion.cs" />
