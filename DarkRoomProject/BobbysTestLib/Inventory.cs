@@ -12,9 +12,33 @@ namespace BobbysTestLib
     {
 
         public const int MaxSlotsInInventory = 15;
-        public readonly List<ObtanableItem> InventoryList = new List<ObtanableItem>();
-        //public void AddItem()        
-            
+        public readonly List<InvetoryList> InventoryList = new List<InvetoryList>();
+        public void AddItem(ObtanableItem item, int AmountToAdd )
+        {
+            while (AmountToAdd > 0)
+            {
+                if (InventoryList.Exists(listitem => (listitem.ID == item.ID) && (AmountToAdd < item.StackableAmount)))
+                {
+                    InvetoryList invetoryList = InventoryList.First(listitem => (listitem.ID == item.ID) && (AmountToAdd < item.StackableAmount));
+                    int MaxAmountPerStack = (item.StackableAmount - invetoryList.ItemAmount);
+                    int AmountToAddPerStack = Math.Min(AmountToAdd, MaxAmountPerStack);
+                    invetoryList.AddToAmount(AmountToAddPerStack);
+                    AmountToAdd -= AmountToAddPerStack;
+                }
+                else
+                {
+                    if (InventoryList.Count < MaxSlotsInInventory)
+                    {
+                        InventoryList.Add(new InvetoryList(item, 0));
+                    }
+                    else
+                    {
+                        throw new Exception("You Are Out Of Inventory Space");
+                    }
+                }
+            }
+        }        
+         
          
 
          

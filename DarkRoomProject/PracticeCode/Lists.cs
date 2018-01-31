@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace PracticeCode
 {
     public class Lists
-    {   
+    {
+       
         public string Name { get; set; }
         public int Age { get; set; }
         /// <summary>
@@ -16,7 +17,7 @@ namespace PracticeCode
         public static void RunCode()
         {
             List<string> Name = new List<string>();
-            List<int> Age = new List<int>();
+            
             {
 
                 Name.Add("Josh");
@@ -26,7 +27,10 @@ namespace PracticeCode
 
             List<Item> ItemList = new List<Item>()
             {
-                new Item() {ItemId = 1, ItemName = "HealingPotion"}
+                new Item() {ItemId = 1, ItemName = "HealingPotion"},
+                new Item() {ItemId = 2, ItemName = "StamminaPotion"},
+                new Item() {ItemId = 3, ItemName = "StrengthPotion" }
+                
 
             };
 
@@ -36,12 +40,10 @@ namespace PracticeCode
 
         }
     }
-    public class Item
-    {
-        public string ItemName { get; set; }
-        public int ItemId { get; set; }
-    }
-   
+  
+        
+    
 
+    
 
 }
