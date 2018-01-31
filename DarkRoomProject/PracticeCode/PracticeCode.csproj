@@ -47,6 +47,7 @@
     <Compile Include="DoLoops.cs" />
     <Compile Include="ForLoops.cs" />
     <Compile Include="Generics.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="LambdaExpressions.cs" />
     <Compile Include="LearnArrays.cs" />
     <Compile Include="LearnInterfaces.cs" />

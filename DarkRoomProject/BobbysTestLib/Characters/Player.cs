@@ -10,7 +10,8 @@ namespace BobbysTestLib
     /// Proprties For Player
     /// </summary>
     public class Player : Character
-    {  
+    {
+        public Inventory playerinventory; 
         public int ExpPoints { get; set; }
         public int FleeCount { get; set; } = 3;
         public int SwordSlashDamageAmount
