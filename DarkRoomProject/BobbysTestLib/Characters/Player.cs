@@ -25,7 +25,7 @@ namespace BobbysTestLib
         /// 
         /// </summary>
         public int FinalSlashDamageAmount
-        {
+        { 
             get { return _swordSlashDamageAmount; }
             set { _finalSlashDamageAmount = value; }
         }
