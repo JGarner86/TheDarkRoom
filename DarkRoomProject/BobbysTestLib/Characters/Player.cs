@@ -11,7 +11,7 @@ namespace BobbysTestLib
     /// </summary>
     public class Player : Character
     {
-        public Inventory playerinventory; 
+        public Inventory PlayerInventory { get; set; }
         public int ExpPoints { get; set; }
         public int FleeCount { get; set; } = 3;
         public int SwordSlashDamageAmount
@@ -20,6 +20,10 @@ namespace BobbysTestLib
             set { _swordSlashDamageAmount = value; }
         }
 
+        public Player()
+        {
+            PlayerInventory = new Inventory();
+        }
 
         /// <summary>
         /// 
@@ -57,7 +61,27 @@ namespace BobbysTestLib
        }
 
 
-      
+       public static void RunTestCode()
+        {
+            Player john = new Player()
+            {
+                Name = "John",
+                
+            };
+
+            Potion healthPotion = new Potion("Health Potion");
+
+            john.PlayerInventory.AddItem(healthPotion, 5);
+
+            Console.WriteLine($"{john.Name} has {john.PlayerInventory.Count(healthPotion)} {healthPotion.Name}");
+
+            john.PlayerInventory.AddItem(healthPotion, 2);
+
+            Console.WriteLine($"{john.Name} has {john.PlayerInventory.Count(healthPotion)} {healthPotion.Name}");
+
+            john.PlayerInventory.AddItem(healthPotion, 5);
+            Console.WriteLine($"{john.Name} has {john.PlayerInventory.Count(healthPotion)} {healthPotion.Name}");
+        }
        
     }
 }
